@@ -12,12 +12,12 @@ class HealthChecksView(View):
     checks: Iterable[HealthCheck] | None = None
 
     def get(self, request: HttpRequest, *args, **kwargs) -> JsonResponse:
-        include_sucess = request.GET.get("include_success") == "yes"
+        include_success = request.GET.get("include_success") == "yes"
 
         runner = HealthChecksRunner(
             checks=self.checks,
             checks_collector=self.checks_collector,
-            include_success=include_sucess,
+            include_success=include_success,
         )
         results = runner.run_checks()
 

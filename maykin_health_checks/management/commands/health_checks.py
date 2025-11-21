@@ -12,13 +12,16 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument(
             "--checks-collector",
-            help="Import path to the collector callable.",
+            help=(
+                "Dotted path to the collector callable, "
+                "for example `testapp.checks.check_collector`."
+            ),
             required=True,
         )
         parser.add_argument(
             "--include-success",
             action="store_true",
-            help="Whether to only show health checks that failed.",
+            help="Whether to also show health checks that succeeded.",
             default=False,
         )
 

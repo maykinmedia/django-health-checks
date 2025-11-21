@@ -5,7 +5,7 @@
 Welcome to maykin_health_checks's documentation!
 =================================================
 
-|build-status| |code-quality| |ruff| |coverage| |docs|
+|build-status| |code-quality| |ruff| |coverage| 
 
 |python-versions| |django-versions| |pypi-version|
 

@@ -31,7 +31,9 @@ def test_view_with_success(client: Client):
         "health-checks-injected-collector"
     )  # Uses injected checks collector.
 
-    response = client.get(checks_url, query_params={"include_success": "yes"})
+    # TODO: change when we drop support for Django 4.2
+    # response = client.get(checks_url, query_params={"include_success": "yes"})
+    response = client.get(f"{checks_url}?include_success=yes")
 
     assert response.status_code == 200
     assert response.json() == [
