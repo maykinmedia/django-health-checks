@@ -86,7 +86,7 @@ There is also a management command that can be used to run health checks from th
 
     django-admin health_checks --checks-collector dotted.path.to.my_checks_collector_fn
 
-    
+
 
 Local development
 =================
@@ -139,7 +139,6 @@ To run the tests without tox, you can do the following (from the root of the rep
     :alt: Coverage status
 
 .. |docs| image:: https://readthedocs.org/projects/maykin_health_checks/badge/?version=latest
-    :target: https://maykin_health_checks.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
 .. |python-versions| image:: https://img.shields.io/pypi/pyversions/maykin_health_checks.svg

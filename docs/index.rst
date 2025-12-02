@@ -50,7 +50,6 @@ Indices and tables
     :alt: Coverage status
 
 .. |docs| image:: https://readthedocs.org/projects/maykin_health_checks/badge/?version=latest
-    :target: https://maykin_health_checks.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
 .. |python-versions| image:: https://img.shields.io/pypi/pyversions/maykin_health_checks.svg
