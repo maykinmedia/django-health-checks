@@ -1,0 +1,28 @@
+from collections.abc import Iterable
+
+from django import template
+
+from ..types import HealthCheckResult
+
+register = template.Library()
+
+# TODO: the results don't have a nice human readable identifier.
+# We are not displaying the data in the "extra" field
+
+
+@register.inclusion_tag("configuration_health_check.html")
+def display_health_checks(
+    check_results: Iterable[HealthCheckResult],
+) -> dict[str, Iterable[HealthCheckResult]]:
+    successful_checks = []
+    failed_checks = []
+    for check_result in check_results:
+        if check_result.success:
+            successful_checks.append(check_result)
+        else:
+            failed_checks.append(check_result)
+
+    return {
+        "successful_checks": successful_checks,
+        "failed_checks": failed_checks,
+    }
