@@ -1,0 +1,20 @@
+{% extends "admin/index.html" %}
+{% load display_health_checks run_checks static i18n %}
+
+{% block sidebar %}
+
+{% run_happy_checks as results %}
+{% run_unhappy_checks as results_with_failures %}
+
+
+
+<div class="admin-sidebar">
+    <div class="admin-sidebar-item" id="configuration-health-check">
+        {% display_health_checks results %} 
+        {% display_health_checks results_with_failures %} 
+    </div>
+    
+</div>
+
+
+{% endblock %}
