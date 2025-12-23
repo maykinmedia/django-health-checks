@@ -21,7 +21,7 @@ sys.path.insert(0, str(code_directory))
 
 # -- Project information -----------------------------------------------------
 
-project = "maykin_config_checks"
+project = "Maykin Config Checks"
 copyright = "2025, Maykin Media"
 author = "Maykin Media"
 
