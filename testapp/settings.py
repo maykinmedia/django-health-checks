@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.admin",
+    "django.contrib.staticfiles",
     "maykin_health_checks",
     "testapp",
 ]
@@ -38,7 +39,7 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -52,3 +53,6 @@ TEMPLATES = [
 ]
 
 ROOT_URLCONF = "testapp.urls"
+
+STATIC_ROOT = BASE_DIR / "static"
+STATIC_URL = "/static/"
