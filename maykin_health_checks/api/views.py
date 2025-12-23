@@ -4,8 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, JsonResponse
 from django.views import View
 
-from ..runner import HealthChecksRunner
-from ..types import HealthCheck
+from .. import HealthCheck, run_checks
 
 
 class HealthChecksView(LoginRequiredMixin, View):
@@ -20,10 +19,9 @@ class HealthChecksView(LoginRequiredMixin, View):
     def get(self, request: HttpRequest, *args, **kwargs) -> JsonResponse:
         include_success = request.GET.get("include_success") == "yes"
 
-        runner = HealthChecksRunner(
+        results = run_checks(
             checks_collector=self.checks_collector,
             include_success=include_success,
         )
-        results = runner.run_checks()
 
         return JsonResponse([result.to_builtins() for result in results], safe=False)

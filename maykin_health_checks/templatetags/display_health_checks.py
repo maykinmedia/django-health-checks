@@ -2,7 +2,7 @@ from collections.abc import Iterable
 
 from django import template
 
-from ..types import HealthCheckResult
+from .. import HealthCheckResult
 
 register = template.Library()
 

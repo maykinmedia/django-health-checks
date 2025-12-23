@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.utils.module_loading import import_string
 
-from ...runner import HealthChecksRunner
+from ... import run_checks
 
 
 class Command(BaseCommand):
@@ -22,24 +22,27 @@ class Command(BaseCommand):
             help="Whether to also show health checks that succeeded.",
             default=False,
         )
+        parser.add_argument(
+            "--extra-info",
+            action="store_true",
+            help="Show extra information for failed checks.",
+            default=False,
+        )
 
     def handle(self, *args, **options):
         checks_collector_fn = import_string(options["checks_collector"])
         include_success = options.get("include_success", False)
-        runner = HealthChecksRunner(
+        results = run_checks(
             checks_collector=checks_collector_fn, include_success=include_success
         )
-        results = runner.run_checks()
 
         for result in results:
             if include_success and result.success:
-                self.stdout.write(
-                    self.style.SUCCESS(f"Correctly configured: {result.identifier}")
-                )
+                self.stdout.write(self.style.SUCCESS(f"✅ {result.verbose_name}"))
                 continue
 
             self.stdout.write(
-                self.style.ERROR(f"Error {result.identifier}: {result.message}")
+                self.style.ERROR(f"❌ {result.verbose_name}: {result.message}")
             )
-            if result.extra:
-                self.stdout.write(self.style.ERROR(str(result.extra)))
+            if result.extra and options.get("extra_info", False):
+                self.stdout.write(str(result.extra))

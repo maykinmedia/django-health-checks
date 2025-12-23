@@ -15,7 +15,7 @@
         <ul class="config-error-list">
             {% for failed_check in failed_checks %}
             <li>
-                {{ failed_check.identifier|capfirst }}: {{ failed_check.message }}
+                {{ failed_check.verbose_name|capfirst }}: {{ failed_check.message }}
             </li>
             {% endfor %}
         </ul>
@@ -24,7 +24,7 @@
         <ul class="config-success-list">
             {% for successful_check in successful_checks %}
             <li>
-                {{ successful_check.identifier|capfirst }}: {{ successful_check.message }}
+                {{ successful_check.verbose_name|capfirst }}: {{ successful_check.message }}
             </li>
             {% endfor %}
         </ul>
