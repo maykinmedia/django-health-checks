@@ -1,28 +1,28 @@
-.. maykin_config_checks documentation master file, created by startproject.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-Welcome to maykin_config_checks's documentation!
-=================================================
+======================================================
+Welcome to Maykin Configuration Checks' documentation!
+======================================================
+
+:Version: 0.1.0
+:Source: https://github.com/maykinmedia/config-checks
+:Keywords: ``Django``, ``Maykin``, ``configuration``, ``health checks``
+:PythonVersion: 3.12, 3.13
 
 |build-status| |code-quality| |ruff| |coverage| 
 
 |python-versions| |django-versions| |pypi-version|
 
-<One liner describing the project>
+This library aims to standardise how health checks for Maykin Django applications 
+are run. The checks are meant to validate that the configuration that is normally
+performed in the Admin or via ``django-setup-configuration`` is correct.
 
-Features
-========
-
-* ...
-* ...
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    quickstart
-
+   development
 
 
 Indices and tables

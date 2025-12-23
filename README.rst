@@ -12,7 +12,9 @@ Welcome to Maykin Health Checks' documentation!
 
 |python-versions| |django-versions| |pypi-version|
 
-Library to help with defining and running health checks for Maykin Django projects.
+This library aims to standardise how health checks for Maykin Django applications 
+are run. The checks are meant to validate that the configuration that is normally
+performed in the Admin or via ``django-setup-configuration`` is correct.
 
 .. contents::
 
