@@ -124,13 +124,13 @@ To run the tests without tox, you can do the following (from the root of the rep
     pytest tests
 
 
-.. |build-status| image:: https://github.com/maykinmedia/django-health-checks/workflows/Run%20CI/badge.svg
+.. |build-status| image:: https://github.com/maykinmedia/config-checks/workflows/Run%20CI/badge.svg
     :alt: Build status
-    :target: https://github.com/maykinmedia/django-health-checks/actions?query=workflow%3A%22Run+CI%22
+    :target: https://github.com/maykinmedia/config-checks/actions?query=workflow%3A%22Run+CI%22
 
-.. |code-quality| image:: https://github.com/maykinmedia/django-health-checks/workflows/Code%20quality%20checks/badge.svg
+.. |code-quality| image:: https://github.com/maykinmedia/config-checks/workflows/Code%20quality%20checks/badge.svg
      :alt: Code quality checks
-     :target: https://github.com/maykinmedia/django-health-checks/actions?query=workflow%3A%22Code+quality+checks%22
+     :target: https://github.com/maykinmedia/config-checks/actions?query=workflow%3A%22Code+quality+checks%22
 
 .. |ruff| image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
     :target: https://github.com/astral-sh/ruff
